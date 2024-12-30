@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://kit.fontawesome.com/adad881590.js" crossorigin="anonymous"></script>
     <style>
         .image-container {
           position: relative;
@@ -123,6 +124,58 @@
             display: block;   /* 이미지 주변의 여백을 없애기 위해 display block 설정 */
             margin: 0 auto;   /* 이미지 중앙 정렬 */
         }
+    </style>
+    <style>
+        .skillSection {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+        }
+
+        .skillSection .major h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .skillSection .major p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 50px;
+            color: #666;
+        }
+
+        .skill-box {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-box .icon {
+            font-size: 40px;
+            color: #ff6600;
+            margin-bottom: 15px;
+        }
+
+        .skill-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .skill-box p {
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.6;
+        }
+
     </style>
 </head>
 <body class="homepage is-preload">
@@ -357,186 +410,121 @@
                     </section>
 
                 </div>
-                <div class="col-12">
-
-                    <!-- Blog -->
-                    <section>
-                        <header class="major">
-                            <h2>The Blog</h2>
-                        </header>
-                        <div class="row">
-                            <div class="col-6 col-12-small">
-                                <section class="box">
-                                    <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-                                    <header>
-                                        <h3>Magna tempus consequat</h3>
-                                        <p>Posted 45 minutes ago</p>
-                                    </header>
-                                    <p>Lorem ipsum dolor sit amet sit veroeros sed et blandit consequat sed veroeros lorem et blandit adipiscing feugiat phasellus tempus hendrerit, tortor vitae mattis tempor, sapien sem feugiat sapien, id suscipit magna felis nec elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos lorem ipsum dolor sit amet.</p>
-                                    <footer>
-                                        <ul class="actions">
-                                            <li><a href="#" class="button icon solid fa-file-alt">Continue Reading</a></li>
-                                            <li><a href="#" class="button alt icon solid fa-comment">33 comments</a></li>
-                                        </ul>
-                                    </footer>
-                                </section>
-                            </div>
-                            <div class="col-6 col-12-small">
-                                <section class="box">
-                                    <a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
-                                    <header>
-                                        <h3>Aptent veroeros aliquam</h3>
-                                        <p>Posted 45 minutes ago</p>
-                                    </header>
-                                    <p>Lorem ipsum dolor sit amet sit veroeros sed et blandit consequat sed veroeros lorem et blandit adipiscing feugiat phasellus tempus hendrerit, tortor vitae mattis tempor, sapien sem feugiat sapien, id suscipit magna felis nec elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos lorem ipsum dolor sit amet.</p>
-                                    <footer>
-                                        <ul class="actions">
-                                            <li><a href="#" class="button icon solid fa-file-alt">Continue Reading</a></li>
-                                            <li><a href="#" class="button alt icon solid fa-comment">33 comments</a></li>
-                                        </ul>
-                                    </footer>
-                                </section>
-                            </div>
-                        </div>
-                    </section>
-
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <section id="footer">
+    <section id="skill" class="skillSection">
         <div class="container">
+            <header class="major">
+                <h2>Skills</h2>
+                <p>A summary of my technical abilities and practical experiences.</p>
+            </header>
             <div class="row">
-                <div class="col-8 col-12-medium">
-                    <section>
-                        <header>
-                            <h2>Blandit nisl adipiscing</h2>
-                        </header>
-                        <ul class="dates">
-                            <li>
-                                <span class="date">Jan <strong>27</strong></span>
-                                <h3><a href="#">Lorem dolor sit amet veroeros</a></h3>
-                                <p>Ipsum dolor sit amet veroeros consequat blandit ipsum phasellus lorem consequat etiam.</p>
-                            </li>
-                            <li>
-                                <span class="date">Jan <strong>23</strong></span>
-                                <h3><a href="#">Ipsum sed blandit nisl consequat</a></h3>
-                                <p>Blandit phasellus lorem ipsum dolor tempor sapien tortor hendrerit adipiscing feugiat lorem.</p>
-                            </li>
-                            <li>
-                                <span class="date">Jan <strong>15</strong></span>
-                                <h3><a href="#">Magna tempus lorem feugiat</a></h3>
-                                <p>Dolore consequat sed phasellus lorem sed etiam nullam dolor etiam sed amet sit consequat.</p>
-                            </li>
-                            <li>
-                                <span class="date">Jan <strong>12</strong></span>
-                                <h3><a href="#">Dolore tempus ipsum feugiat nulla</a></h3>
-                                <p>Feugiat lorem dolor sed nullam tempus lorem ipsum dolor sit amet nullam consequat.</p>
-                            </li>
-                            <li>
-                                <span class="date">Jan <strong>10</strong></span>
-                                <h3><a href="#">Blandit tempus aliquam?</a></h3>
-                                <p>Feugiat sed tempus blandit tempus adipiscing nisl lorem ipsum dolor sit amet dolore.</p>
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-                <div class="col-4 col-12-medium">
-                    <section>
-                        <header>
-                            <h2>What's this all about?</h2>
-                        </header>
-                        <a href="#" class="image featured"><img src="images/pic10.jpg" alt="" /></a>
+                <!-- Java -->
+                <div class="col-4 col-6-medium col-12-small">
+                    <section class="box skill-box">
+                        <div class="icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h3>Java</h3>
                         <p>
-                            This is <strong>Dopetrope</strong> a free, fully responsive HTML5 site template by
-                            <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a> It's released for free under
-                            the <a href="http://html5up.net/license/">Creative Commons Attribution</a> license so feel free to use it for any personal or commercial project &ndash; just don't forget to credit us!
+                            - 객체지향 프로그래밍(OOP) 원칙을 적용하여 유지보수가 용이한 코드를 작성<br>
+                            - 컬렉션 프레임워크 활용 능숙 (List, Map, Set 등) 및 스트림 API 사용 경험<br>
+                            - 멀티스레딩 구현과 동기화 처리 경험<br>
+                            - Spring Boot 기반의 RESTful API 설계 및 비즈니스 로직 구현<br>
+                            - NullPointerException, OutOfMemoryError 등의 예외 처리 및 최적화 경험<br>
                         </p>
-                        <footer>
-                            <ul class="actions">
-                                <li><a href="#" class="button">Find out more</a></li>
-                            </ul>
-                        </footer>
                     </section>
                 </div>
-                <div class="col-4 col-6-medium col-12-small">
-                    <section>
-                        <header>
-                            <h2>Tempus consequat</h2>
-                        </header>
-                        <ul class="divided">
-                            <li><a href="#">Lorem ipsum dolor sit amet sit veroeros</a></li>
-                            <li><a href="#">Sed et blandit consequat sed tlorem blandit</a></li>
-                            <li><a href="#">Adipiscing feugiat phasellus sed tempus</a></li>
-                            <li><a href="#">Hendrerit tortor vitae mattis tempor sapien</a></li>
-                            <li><a href="#">Sem feugiat sapien id suscipit magna felis nec</a></li>
-                            <li><a href="#">Elit class aptent taciti sociosqu ad litora</a></li>
-                        </ul>
-                    </section>
-                </div>
-                <div class="col-4 col-6-medium col-12-small">
-                    <section>
-                        <header>
-                            <h2>Ipsum et phasellus</h2>
-                        </header>
-                        <ul class="divided">
-                            <li><a href="#">Lorem ipsum dolor sit amet sit veroeros</a></li>
-                            <li><a href="#">Sed et blandit consequat sed tlorem blandit</a></li>
-                            <li><a href="#">Adipiscing feugiat phasellus sed tempus</a></li>
-                            <li><a href="#">Hendrerit tortor vitae mattis tempor sapien</a></li>
-                            <li><a href="#">Sem feugiat sapien id suscipit magna felis nec</a></li>
-                            <li><a href="#">Elit class aptent taciti sociosqu ad litora</a></li>
-                        </ul>
-                    </section>
-                </div>
-                <div class="col-4 col-12-medium">
-                    <section>
-                        <header>
-                            <h2>Vitae tempor lorem</h2>
-                        </header>
-                        <ul class="social">
-                            <li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
-                            <li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
-                            <li><a class="icon brands fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
-                            <li><a class="icon brands fa-tumblr" href="#"><span class="label">Tumblr</span></a></li>
-                            <li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
-                        </ul>
-                        <ul class="contact">
-                            <li>
-                                <h3>Address</h3>
-                                <p>
-                                    Untitled Incorporated<br />
-                                    1234 Somewhere Road Suite<br />
-                                    Nashville, TN 00000-0000
-                                </p>
-                            </li>
-                            <li>
-                                <h3>Mail</h3>
-                                <p><a href="#">someone@untitled.tld</a></p>
-                            </li>
-                            <li>
-                                <h3>Phone</h3>
-                                <p>(800) 000-0000</p>
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-                <div class="col-12">
 
-                    <!-- Copyright -->
-                    <div id="copyright">
-                        <ul class="links">
-                            <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                        </ul>
-                    </div>
+                <!-- Spring Boot -->
+                <div class="col-4 col-6-medium col-12-small">
+                    <section class="box skill-box">
+                        <div class="icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Spring Boot</h3>
+                        <p>
+                            - Controller-Service-DAO 패턴을 기반으로 한 계층형 구조 설계<br>
+                            - Spring Security를 활용한 인증 및 권한 관리 구현<br>
+                            - 외부 API(Google Drive API 등)와의 연동을 통한 데이터 처리<br>
+                            - MyBatis를 이용한 동적 SQL 처리 및 고성능 데이터베이스 연동<br>
+                            - Spring Scheduler를 사용한 배치 작업 및 자동화<br>
+                        </p>
+                    </section>
+                </div>
 
+                <!-- JavaScript -->
+                <div class="col-4 col-6-medium col-12-small">
+                    <section class="box skill-box">
+                        <div class="icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <h3>JavaScript</h3>
+                        <p>
+                            - 다양한 이벤트 기반의 동적 UI 구성 (click, hover, scroll 등 이벤트 처리)<br>
+                            - WebkitSpeechRecognition API를 이용한 실시간 음성 인식 및 처리<br>
+                            - ToastEditor를 사용해 사용자 친화적인 텍스트 에디터 UI 개발<br>
+                            - 비동기 통신(AJAX, Fetch API)을 활용한 실시간 데이터 처리<br>
+                            - ES6+ 문법 적용 및 모듈화된 코드 작성<br>
+                        </p>
+                    </section>
+                </div>
+
+                <!-- Python -->
+                <div class="col-4 col-6-medium col-12-small">
+                    <section class="box skill-box">
+                        <div class="icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3>Python</h3>
+                        <p>
+                            - YOLOv5 및 OpenCV를 활용한 객체 탐지 및 이미지 처리<br>
+                            - Flask 프레임워크를 통해 경량 백엔드 서버 구축 및 RESTful API 제공<br>
+                            - Scikit-learn 및 TensorFlow를 활용한 머신러닝/딥러닝 모델 구현<br>
+                            - Joblib을 통한 모델 저장 및 재사용 환경 구성<br>
+                            - Pandas와 NumPy로 대규모 데이터 전처리 및 분석 경험<br>
+                        </p>
+                    </section>
+                </div>
+
+                <!-- MySQL -->
+                <div class="col-4 col-6-medium col-12-small">
+                    <section class="box skill-box">
+                        <div class="icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>MySQL</h3>
+                        <p>
+                            - ERD 설계 및 관계형 데이터베이스 최적화<br>
+                            - MyBatis 매퍼를 활용한 복잡한 SQL 쿼리 처리<br>
+                            - 트랜잭션 제어(COMMIT, ROLLBACK)와 데이터 무결성 유지<br>
+                            - 인덱스와 조인을 활용하여 대규모 데이터의 성능 개선<br>
+                            - 정규화 및 비정규화를 고려한 데이터베이스 설계<br>
+                        </p>
+                    </section>
+                </div>
+
+                <!-- 기타 -->
+                <div class="col-4 col-6-medium col-12-small">
+                    <section class="box skill-box">
+                        <div class="icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Other Tools</h3>
+                        <p>
+                            - Git/GitHub를 통한 협업 및 브랜치 전략 적용 (Git Flow 등)<br>
+                            - Maven 및 Gradle을 이용한 의존성 관리 및 빌드 자동화<br>
+                            - Apache 및 Nginx 서버 설정 및 운영 경험<br>
+                            - WebSocket 및 SSE(Server-Sent Events)를 활용한 실시간 데이터 통신<br>
+                            - Docker를 이용한 컨테이너화 및 배포 자동화 경험<br>
+                        </p>
+                    </section>
                 </div>
             </div>
         </div>
     </section>
-
 </div>
 
 <script>

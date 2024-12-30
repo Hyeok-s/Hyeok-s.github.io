@@ -1552,6 +1552,7 @@ input, select, textarea {
 				display: inline;
 				margin: 0;
 				padding: 0 1em 0 1em;
+				font-size: 2.5em;
 			}
 
 	footer {
@@ -2318,7 +2319,21 @@ input, select, textarea {
 			opacity: 0.1;
 		}
 
+	#skill {
+		position: relative;
+		padding: 4em 0 4em 0;
+	}
 
+		#skill:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-size: 100% 100%;
+			z-index: 0;
+			opacity: 0.1;
+		}
 /* Footer */
 
 	#footer {
@@ -2465,7 +2480,9 @@ input, select, textarea {
 			#main {
 				padding: 30px 0;
 			}
-
+			#skill {
+				padding: 30px 0;
+			}
 		/* Footer */
 
 			#footer {
@@ -2572,7 +2589,9 @@ input, select, textarea {
 			#main {
 				padding: 40px 0;
 			}
-
+			#skill {
+				padding: 40px 0;
+			}
 		/* Copyright */
 
 			#copyright ul.links {
@@ -2939,7 +2958,9 @@ input, select, textarea {
 			#main {
 				padding: 20px 0;
 			}
-
+			#skill {
+				padding: 20px 0;
+			}
 		/* Footer */
 
 			#footer {
