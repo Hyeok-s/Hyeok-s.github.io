@@ -9,6 +9,9 @@
         .slider {
           display: flex;
           transition: transform 0.4s ease-in-out;
+          overflow: hidden; /* 넘치는 이미지를 숨깁니다 */
+          width: 100%; /* 슬라이더가 부모의 너비를 가득 채우도록 설정 */
+          position: relative;
         }
         .slide {
           min-width: 100%;
@@ -24,11 +27,12 @@
         }
         .controls {
           position: absolute;
-          top: 50%;
+          top: 30%;
           width: 100%;
           display: flex;
           justify-content: space-between;
           transform: translateY(-50%);
+          pointer-events: none;
         }
         .control {
           background-color: rgba(0, 0, 0, 0.5);
@@ -129,6 +133,10 @@
                                         <div class="slide"><img src="https://ifh.cc/g/cydgF0.jpg" border='0' alt="Image 1"></div>
                                         <div class="slide"><img src="https://ifh.cc/g/pOYhPx.jpg" border='0' alt="Image 1"></div>
                                         <div class="slide"><img src="https://ifh.cc/g/HO5TWz.jpg" border='0' alt="Image 1"></div>
+                                        <div class="controls">
+                                            <button class="control" id="prev">❮</button>
+                                            <button class="control" id="next">❯</button>
+                                        </div>
                                     </div>
                                     <header>
                                         <h3>Ipsum feugiat et dolor</h3>
@@ -139,10 +147,6 @@
                                             <li><a href="#" class="button alt">Find out more</a></li>
                                         </ul>
                                     </footer>
-                                    <div class="controls">
-                                        <button class="control" id="prev">❮</button>
-                                        <button class="control" id="next">❯</button>
-                                    </div>
                                 </section>
                             </div>
                             <div class="col-4 col-6-medium col-12-small">
@@ -401,13 +405,6 @@
 
 </div>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.dropotron.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
 <script>
     const slider = document.getElementById('slider');
     const slides = document.querySelectorAll('.slide');
