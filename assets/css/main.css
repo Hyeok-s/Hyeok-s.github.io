@@ -1561,9 +1561,11 @@ input, select, textarea {
 /* Box */
 
 	.box {
+
 		background: #ffffff;
 		border-bottom: solid 1px #ccc;
-		padding: 2.75em 1.75em 2.75em 1.75em;
+		padding: 2.25em 1.75em 1.75em 1.75em;
+		height: 100%;
 	}
 
 		.box .image.featured {

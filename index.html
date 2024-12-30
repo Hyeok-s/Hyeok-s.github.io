@@ -6,45 +6,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-        .slider {
-          display: flex;
-          transition: transform 0.4s ease-in-out;
-          overflow: hidden; /* 넘치는 이미지를 숨깁니다 */
-          width: 100%; /* 슬라이더가 부모의 너비를 가득 채우도록 설정 */
+        .image-container {
           position: relative;
+          height: 200px;
+          overflow: hidden;
         }
-        .slide {
-          min-width: 100%;
-          height: 100%;
-          position: relative;
-        }
-        .slide img {
+
+        .image-slide {
           width: 100%;
           height: 100%;
-          object-fit: cover; /* 이미지가 박스를 꽉 채우도록 설정 */
-          display: block;
-          border-radius: 10px;
-        }
-        .controls {
           position: absolute;
-          top: 30%;
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
+          top: 0;
+          left: 0;
+          display: none; /* 기본적으로 숨김 */
+        }
+
+        .image-slide:first-child {
+          display: block; /* 첫 번째 이미지만 기본 표시 */
+        }
+
+        /* 화살표 버튼 스타일 */
+        .arrow-btn {
+          position: absolute;
+          top: 50%; /* 세로 가운데 정렬 */
           transform: translateY(-50%);
-          pointer-events: none;
-        }
-        .control {
-          background-color: rgba(0, 0, 0, 0.5);
-          color: #fff;
+          background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정 배경 */
+          color: white;
           border: none;
-          padding: 10px 15px;
-          cursor: pointer;
-          font-size: 18px;
+          font-size: 25px; /* 화살표 크기 */
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
+          cursor: pointer;
+          z-index: 10; /* 이미지 위에 표시되도록 */
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
-        .control:hover {
-          background-color: rgba(0, 0, 0, 0.8);
+
+
+        /* 왼쪽 화살표 위치 */
+        .prev-btn {
+          padding-right: 5px;
+          padding-left: 0px;
+          padding-bottom: 6px;
+          padding-top: 0px;
+        }
+
+        /* 오른쪽 화살표 위치 */
+        .next-btn {
+          right: 0px;
+          padding-right: 0px;
+          padding-left: 5px;
+          padding-bottom: 6px;
+          padding-top: 0px;
+        }
+
+        /* 버튼 호버 효과 */
+        .arrow-btn:hover {
+            background-color: rgba(0, 0, 0, 0.1); /* 살짝 회색 */
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+    </style>
+    <style>
+        /* 기술 버튼 스타일 */
+    .tech-buttons {
+        margin-top: 15px;
+    }
+
+/* 각 기술 버튼에 기본 스타일 */
+    .tech-btn {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: not-allowed; /* 클릭 불가능 */
+        font-weight: bold;
+        color: white;
+        background-color: gray;
+        font-size: 16px;
+    }
+
+        /* 각 기술 버튼 색상 */
+        .a-btn {
+            background-color: #0074cc; /* Java 색 */
+        }
+
+        .b-btn {
+            background-color: #FF6600; /* JSP 색 */
+        }
+
+        .c-btn {
+            background-color: #D34836; /* Apache 색 */
+        }
+
+        .d-btn {
+            background-color: #00758F; /* MySQL 색 */
+        }
+        .e-btn{
+            background-color: #8CC84B
+        }
+        .f-btn{
+            background-color: #FFD43B
+        }
+        .sh{
+            margin-top: 20px;
+            margin-bottom: 13px;
+        }
+        .git{
+            margin-top: 10px;
+
+        }
+        .git img {
+            width: 120px;      /* 너비가 조절되면 높이가 자동으로 비례하도록 설정 */
+            height: 50px;     /* 높이 비례 유지 */
+            display: block;   /* 이미지 주변의 여백을 없애기 위해 display block 설정 */
+            margin: 0 auto;   /* 이미지 중앙 정렬 */
         }
     </style>
 </head>
@@ -129,93 +206,150 @@
                         <div class="row">
                             <div class="col-4 col-6-medium col-12-small">
                                 <section class="box">
-                                    <div class="slider" id="slider">
-                                        <div class="slide"><img src="https://ifh.cc/g/cydgF0.jpg" border='0' alt="Image 1"></div>
-                                        <div class="slide"><img src="https://ifh.cc/g/pOYhPx.jpg" border='0' alt="Image 1"></div>
-                                        <div class="slide"><img src="https://ifh.cc/g/HO5TWz.jpg" border='0' alt="Image 1"></div>
-                                        <div class="controls">
-                                            <button class="control" id="prev">❮</button>
-                                            <button class="control" id="next">❯</button>
-                                        </div>
+                                    <div class="image-container">
+                                        <img src="https://ifh.cc/g/cydgF0.jpg" alt="Image 1" class="image-slide">
+                                        <img src="https://ifh.cc/g/pOYhPx.jpg" alt="Image 2" class="image-slide" style="display: none;">
+                                        <img src="https://ifh.cc/g/HO5TWz.jpg" alt="Image 3" class="image-slide" style="display: none;">
+                                        <button class="prev-btn arrow-btn">&#9664;</button> <!-- 왼쪽 화살표 -->
+                                        <button class="next-btn arrow-btn">&#9654;</button>
                                     </div>
-                                    <header>
-                                        <h3>Ipsum feugiat et dolor</h3>
+                                    <header class="sh">
+                                        <h3>수강 강의 후기 게시판</h3>
                                     </header>
-                                    <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-                                    <footer>
-                                        <ul class="actions">
-                                            <li><a href="#" class="button alt">Find out more</a></li>
-                                        </ul>
+                                    <p>많은 전공, 교양 강좌가 있지만 대부분의 강좌에 대한 수업 계획서가 구체적이지 않기에 원하는 강좌의 수강 후기를 미리 확인해 수강 할 강좌에 대한 만족도를 높이기 위해 제작하였습니다.</p>
+                                    <div class="tech-buttons">
+                                        <button class="tech-btn a-btn" disabled>Java</button>
+                                        <button class="tech-btn b-btn" disabled>JSP</button>
+                                        <button class="tech-btn c-btn" disabled>Apache</button>
+                                        <button class="tech-btn d-btn" disabled>MySQL</button>
+                                    </div>
+                                    <footer class="git">
+                                        <a href="https://github.com/Hyeok-s/Course-registration-review-board" target="_blank">
+                                            <img src="images/git.png" alt="Profile Photo">
+                                        </a>
                                     </footer>
                                 </section>
                             </div>
                             <div class="col-4 col-6-medium col-12-small">
                                 <section class="box">
-                                    <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-                                    <header>
-                                        <h3>Sed etiam lorem nulla</h3>
+                                    <div class="image-container">
+                                        <img src="https://ifh.cc/g/AMJch0.jpg" alt="Image 1" class="image-slide">
+                                        <img src="https://ifh.cc/g/R0jW5N.jpg" alt="Image 2" class="image-slide" style="display: none;">
+                                        <button class="prev-btn arrow-btn">&#9664;</button> <!-- 왼쪽 화살표 -->
+                                        <button class="next-btn arrow-btn">&#9654;</button> <!-- 오른쪽 화살표 -->
+                                    </div>
+                                    <header class="sh">
+                                        <h3>학교 인근 맛집 및 놀거리<br/>소개 어플</h3>
                                     </header>
-                                    <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-                                    <footer>
-                                        <ul class="actions">
-                                            <li><a href="#" class="button alt">Find out more</a></li>
-                                        </ul>
+                                    <p>학교에 대해서 잘 모르는 신입생, 복학생 및 재학생들을 위해 학교 주변 지도를 가져와 한눈에 특정 장소를 알아볼 수 있는 어플을 만들었습니다.</p>
+                                    <div class="tech-buttons">
+                                        <button class="tech-btn a-btn" disabled>Java</button>
+                                        <button class="tech-btn b-btn" disabled>AndroidStudio</button>
+                                    </div>
+                                    <footer class="git">
+                                        <a href="https://github.com/Hyeok-s/-Introduction-to-nearby-schools" target="_blank">
+                                            <img src="images/git.png" alt="Profile Photo">
+                                        </a>
                                     </footer>
                                 </section>
                             </div>
                             <div class="col-4 col-6-medium col-12-small">
                                 <section class="box">
-                                    <a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-                                    <header>
-                                        <h3>Consequat et tempus</h3>
+                                    <div class="image-container">
+                                        <img src="https://ifh.cc/g/f186xv.jpg" alt="Image 1" class="image-slide">
+                                        <img src="https://ifh.cc/g/4dxsN1.jpg" alt="Image 2" class="image-slide" style="display: none;">
+                                        <button class="prev-btn arrow-btn">&#9664;</button> <!-- 왼쪽 화살표 -->
+                                        <button class="next-btn arrow-btn">&#9654;</button> <!-- 오른쪽 화살표 -->
+                                    </div>
+                                    <header class="sh">
+                                        <h3>주택가격 예측</h3>
                                     </header>
-                                    <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-                                    <footer>
-                                        <ul class="actions">
-                                            <li><a href="#" class="button alt">Find out more</a></li>
-                                        </ul>
+                                    <p>해당 지역의 데이터를 기반으로 분석 및 학습을 통해 나온 결과물을 모듈화해 웹페이지에서 해당 지역의 가구원 수, 수입등에 따라 주택가격을 예측해주는 프로젝트를 만들었습니다.</p>
+                                    <div class="tech-buttons">
+                                        <button class="tech-btn a-btn" disabled>Python</button>
+                                        <button class="tech-btn b-btn" disabled>Flask</button>
+                                        <button class="tech-btn c-btn" disabled>Joblib</button>
+                                    </div>
+                                    <footer class="git">
+                                        <a href="https://github.com/Hyeok-s/house-price-prediction/tree/master" target="_blank">
+                                            <img src="images/git.png" alt="Profile Photo">
+                                        </a>
                                     </footer>
                                 </section>
                             </div>
                             <div class="col-4 col-6-medium col-12-small">
                                 <section class="box">
-                                    <a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-                                    <header>
-                                        <h3>Blandit sed adipiscing</h3>
+                                    <div class="image-container">
+                                        <img src="https://ifh.cc/g/qMYrQV.jpg" alt="Image 1" class="image-slide">
+                                        <img src="https://ifh.cc/g/Tw6wWW.png" alt="Image 2" class="image-slide" style="display: none;">
+                                        <button class="prev-btn arrow-btn">&#9664;</button> <!-- 왼쪽 화살표 -->
+                                        <button class="next-btn arrow-btn">&#9654;</button> <!-- 오른쪽 화살표 -->
+                                    </div>
+                                    <header class="sh">
+                                        <h3>office365 가입 페이지</h3>
                                     </header>
-                                    <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-                                    <footer>
-                                        <ul class="actions">
-                                            <li><a href="#" class="button alt">Find out more</a></li>
-                                        </ul>
+                                    <p>(주)제이아이티 인턴쉽 당시 2인 프로젝트로 총 4개의 대학교의 lms에 연동해 o365가입 페이지를 만들었으며 해당 페이지는 학교 학생이나 관계자 및 개발자만 접근 가능하게끔 설계하였습니다.</p>
+                                    <button class="tech-btn a-btn" disabled>Node.js</button>
+                                    <button class="tech-btn b-btn" disabled>PowerShell</button>
+                                    <button class="tech-btn c-btn" disabled>Java</button>
+                                    <button class="tech-btn d-btn" disabled>Php</button>
+                                    <button class="tech-btn e-btn" disabled>Mssql</button>
+                                    <footer class="git">
+                                        <a href="https://github.com/Hyeok-s/o365accession" target="_blank">
+                                            <img src="images/git.png" alt="Profile Photo">
+                                        </a>
                                     </footer>
                                 </section>
                             </div>
                             <div class="col-4 col-6-medium col-12-small">
                                 <section class="box">
-                                    <a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-                                    <header>
-                                        <h3>Etiam nisl consequat</h3>
+                                    <div class="image-container">
+                                        <img src="https://ifh.cc/g/HyLoxq.jpg" alt="Image 1" class="image-slide">
+                                        <img src="https://ifh.cc/g/oaGNFW.png" alt="Image 2" class="image-slide" style="display: none;">
+                                        <img src="https://ifh.cc/g/YXKVk1.png" alt="Image 3" class="image-slide" style="display: none;">
+                                        <button class="prev-btn arrow-btn">&#9664;</button> <!-- 왼쪽 화살표 -->
+                                        <button class="next-btn arrow-btn">&#9654;</button> <!-- 오른쪽 화살표 -->
+                                    </div>
+                                    <header class="sh">
+                                        <h3>중고물품 중개거래 사이트</h3>
                                     </header>
-                                    <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-                                    <footer>
-                                        <ul class="actions">
-                                            <li><a href="#" class="button alt">Find out more</a></li>
-                                        </ul>
+                                    <p>중고 물품을 보다 안전하게 거래할 수 있는 중개거래 웹을 만들고자 하였습니다. 관리자가 물품을 확인 후 게시글을 확인해 업로드 해주는 형식으로 설계하였습니다.</p>
+                                    <button class="tech-btn a-btn" disabled>Java</button>
+                                    <button class="tech-btn b-btn" disabled>Mysql</button>
+                                    <button class="tech-btn c-btn" disabled>Thyleaf</button>
+                                    <button class="tech-btn d-btn" disabled>Google OAuth</button>
+                                    <footer class="git">
+                                        <a href="https://github.com/Hyeok-s/-used-product-exchange-2024_09_26-" target="_blank">
+                                            <img src="images/git.png" alt="Profile Photo">
+                                        </a>
                                     </footer>
                                 </section>
                             </div>
                             <div class="col-4 col-6-medium col-12-small">
                                 <section class="box">
-                                    <a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
-                                    <header>
-                                        <h3>Dolore nisl feugiat</h3>
+                                    <div class="image-container">
+                                        <img src="https://ifh.cc/g/0AJ897.jpg" alt="Image 1" class="image-slide">
+                                        <img src="https://ifh.cc/g/ZwhmMt.jpg" alt="Image 2" class="image-slide" style="display: none;">
+                                        <img src="https://ifh.cc/g/R5PqA8.jpg" alt="Image 3" class="image-slide" style="display: none;">
+                                        <img src="https://ifh.cc/g/YWz03P.jpg" alt="Image 4" class="image-slide" style="display: none;">
+                                        <img src="https://ifh.cc/g/mBdmth.png" alt="Image 5" class="image-slide" style="display: none;">
+                                        <button class="prev-btn arrow-btn">&#9664;</button> <!-- 왼쪽 화살표 -->
+                                        <button class="next-btn arrow-btn">&#9654;</button> <!-- 오른쪽 화살표 -->
+                                    </div>
+                                    <header class="sh">
+                                        <h3>레시피 소개 및 공유 사이트</h3>
                                     </header>
-                                    <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-                                    <footer>
-                                        <ul class="actions">
-                                            <li><a href="#" class="button alt">Find out more</a></li>
-                                        </ul>
+                                    <p>공공데이터를 활용해 요리 레시피를 사용자에게 설명해주고 음성인식으로 요리하면서 질문하거나 다음해야 할 것을 알 수 있게 하였으며, 타이머, 메모장 등 여러 편리한 기능을 제공합니다.</p>
+                                    <button class="tech-btn a-btn" disabled>Java</button>
+                                    <button class="tech-btn b-btn" disabled>Web APIs</button>
+                                    <button class="tech-btn c-btn" disabled>Python & Flask</button>
+                                    <button class="tech-btn d-btn" disabled>YOLOv5</button>
+                                    <button class="tech-btn e-btn" disabled>MyBatis</button>
+                                    <button class="tech-btn f-btn" disabled>JSP & JSTL</button>
+                                    <footer class="git">
+                                        <a href="https://github.com/Hyeok-s/recipeProject" target="_blank">
+                                            <img src="images/git.png" alt="Profile Photo">
+                                        </a>
                                     </footer>
                                 </section>
                             </div>
@@ -406,24 +540,39 @@
 </div>
 
 <script>
-    const slider = document.getElementById('slider');
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.getElementById('prev');
-    const nextBtn = document.getElementById('next');
-    let currentIndex = 0;
+    document.addEventListener('DOMContentLoaded', function() {
+        const containers = document.querySelectorAll('.image-container');
 
-    function updateSlider() {
-      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
+        containers.forEach((container) => {
+          const images = container.querySelectorAll('.image-slide');
+          const prevBtn = container.querySelector('.prev-btn');
+          const nextBtn = container.querySelector('.next-btn');
 
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
-      updateSlider();
-    });
+          let currentIndex = 0;
 
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
-      updateSlider();
+          // 이미지 업데이트 함수
+          function updateImage(index) {
+            images.forEach((img, i) => {
+              img.style.display = i === index ? 'block' : 'none';
+            });
+          }
+
+          // 이전 버튼 클릭 이벤트
+          prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage(currentIndex);
+          });
+
+          // 다음 버튼 클릭 이벤트
+          nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage(currentIndex);
+          });
+
+          // 초기 이미지 표시
+          updateImage(currentIndex);
+        });
+
     });
 </script>
 </body>
