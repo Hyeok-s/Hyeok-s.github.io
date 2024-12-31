@@ -1,5 +1,3 @@
-
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -16,6 +14,7 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+	scroll-behavior: smooth;
 	vertical-align: baseline;}
 
 article, aside, details, figcaption, figure,
@@ -1429,95 +1428,7 @@ input, select, textarea {
 						}
 
 		}
-
-/* Form */
-
-	form label {
-		display: block;
-		color: #252122;
-		font-weight: 400;
-		margin: 0 0 0.5em 0;
-	}
-
-	form input[type=text],
-	form input[type=email],
-	form input[type=password],
-	form select,
-	form textarea {
-		-webkit-appearance: none;
-		display: block;
-		border: 0;
-		padding: 0.75em 1em;
-		font-size: 1em;
-		border-radius: 5px;
-		border: solid 1px #dddddd;
-		background: #fff;
-		width: 100%;
-	}
-
-		form input[type=text]:focus,
-		form input[type=email]:focus,
-		form input[type=password]:focus,
-		form select:focus,
-		form textarea:focus {
-			box-shadow: inset 0px 0px 1px 1px #43bff0;
-		}
-
-	form textarea {
-		height: 15em;
-	}
-
-	form ::-webkit-input-placeholder {
-		color: #555 !important;
-	}
-
-	form :-moz-placeholder {
-		color: #555 !important;
-	}
-
-	form ::-moz-placeholder {
-		color: #555 !important;
-	}
-
-	form :-ms-input-placeholder {
-		color: #555 !important;
-	}
-
-	form ::-moz-focus-inner {
-		border: 0;
-	}
-
-/* Tables */
-
-	table {
-		width: 100%;
-	}
-
-		table tr {
-			border-top: solid 1px #dddddd;
-		}
-
-			table tr:first-child {
-				border-top: 0;
-			}
-
-		table td {
-			padding: 0.5em 1em 0.5em 1em;
-		}
-
-		table th {
-			text-align: left;
-			padding: 0.5em 1em 0.5em 1em;
-			font-weight: 700;
-			margin: 0 0 1em 0;
-		}
-
-		table thead {
-			border-bottom: solid 2px #dddddd;
-		}
-
 /* Section/Article */
-
 	section, article {
 		margin-bottom: 2.5em;
 	}
@@ -1971,7 +1882,6 @@ input, select, textarea {
 					}
 
 /* Icons */
-
 	.icon {
 		text-decoration: none;
 		position: relative;
@@ -2062,8 +1972,7 @@ input, select, textarea {
 	#header {
 		position: relative;
 		background: #ffffff;
-		border-bottom: solid 1px #ccc;
-		padding: 5em 0 4em 0;
+		padding: 5em 0 0em 0;
 		text-align: center;
 	}
 
@@ -2117,56 +2026,6 @@ input, select, textarea {
 					font-weight: 700;
 				}
 
-	.dropotron {
-		border-radius: 5px;
-		background-color: #252122;
-		background-color: rgba(34, 30, 31, 0.98);
-		padding: 1.25em 1.5em 1.25em 1.5em;
-		font-style: italic;
-		min-width: 13em;
-		box-shadow: 0px 8px 15px 0px rgba(0, 0, 0, 0.5);
-		text-align: left;
-		margin-top: -1.25em;
-		margin-left: -1px;
-		list-style: none;
-	}
-
-		.dropotron a, .dropotron span {
-			color: #aaa;
-			text-decoration: none;
-			-moz-transition: color .25s ease-in-out;
-			-webkit-transition: color .25s ease-in-out;
-			-ms-transition: color .25s ease-in-out;
-			transition: color .25s ease-in-out;
-		}
-
-		.dropotron li {
-			padding: 0.25em 0 0.25em 0;
-		}
-
-			.dropotron li:hover > a, .dropotron li:hover > span {
-				color: #fff;
-			}
-
-		.dropotron.level-0 {
-			margin-top: 2em;
-		}
-
-			.dropotron.level-0:before {
-				content: '';
-				display: block;
-				position: absolute;
-				left: 50%;
-				margin-left: -10px;
-				top: -9px;
-				border-left: solid 10px transparent;
-				border-right: solid 10px transparent;
-				border-bottom: solid 10px #252122;
-				border-bottom-color: rgba(34, 30, 31, 0.98);
-			}
-
-
-
 /* Banner */
 
 	#banner {
@@ -2191,6 +2050,12 @@ input, select, textarea {
     }
 
     @font-face {
+        font-family: "Yellowtail-Regular";
+        src: url("/assets/webfonts/Yellowtail-Regular.woff") format("truetype");
+        font-weight: bold;
+    }
+
+    @font-face {
         font-family: "NEXONLv1GothicBold";
         src: url("/assets/webfonts/NEXONLv1GothicBold.woff") format("truetype");
         font-weight: 100;
@@ -2199,14 +2064,7 @@ input, select, textarea {
         flex: 1;
         color: #222;
     }
-    .text-content h2 {
-        font-size: 50px;
-        font-weight: 800;
-        color: #000000;
-        margin-bottom: 0.5em;
-        font-family: 'YiSunShinDotum';
-        line-height: 1.4;
-    }
+
     .content-wrapper {
         display: flex;
         max-width: 1200px;
@@ -2244,68 +2102,11 @@ input, select, textarea {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-/* Intro */
-
-	#intro {
-		text-align: center;
-		overflow: hidden;
-	}
-
-		#intro section {
-			margin: 3em 0;
-			padding: 2.5em 0;
-		}
-
-		#intro h2 {
-			font-size: 1.75em;
-		}
-
-		#intro p {
-			margin: 0;
-		}
-
-		#intro .middle {
-			position: relative;
-			z-index: 1;
-		}
-
-			#intro .middle:before {
-				content: '';
-				width: 32px;
-				height: 100%;
-				position: absolute;
-				left: -24px;
-				top: 0;
-				display: block;
-				z-index: -1;
-				box-shadow: 32px 0 0 0 #fff, 0 -32px 0 0 #fff, 0 32px 0 0 #fff, 32px 32px 0 0 #fff, 32px -32px 0 0 #fff, 0 0 32px 0 rgba(0, 0, 0, 0.15);
-			}
-
-			#intro .middle:after {
-				content: '';
-				width: 32px;
-				height: 100%;
-				position: absolute;
-				right: -24px;
-				top: 0;
-				display: block;
-				z-index: -1;
-				box-shadow: -32px 0 0 0 #fff, 0 -32px 0 0 #fff, 0 32px 0 0 #fff, -32px 32px 0 0 #fff, -32px -32px 0 0 #fff, 0 0 32px 0 rgba(0, 0, 0, 0.15);
-			}
-
-		#intro .button {
-			min-width: 12em;
-		}
-
-		#intro footer {
-			margin: 0;
-		}
-
 /* Main */
 
 	#main {
 		position: relative;
-		padding: 4em 0 4em 0;
+		padding: 7.2em 0 4em 0;
 	}
 
 		#main:before {
@@ -2321,7 +2122,7 @@ input, select, textarea {
 
 	#skill {
 		position: relative;
-		padding: 4em 0 4em 0;
+		padding: 7.2em 0 4em 0;
 	}
 
 		#skill:before {
@@ -2379,22 +2180,6 @@ input, select, textarea {
 			#footer header h2 {
 				font-size: 1.75em;
 			}
-
-/* Copyright */
-
-	#copyright {
-		text-align: center;
-		margin: 3em 0 2em 0;
-	}
-
-		#copyright ul.links {
-			display: inline-block;
-			background: #2C2929;
-			background: rgba(255, 255, 255, 0.05);
-			border-radius: 5px;
-			margin: 0;
-			padding: 0.85em 2.25em 0.85em 2.25em;
-		}
 
 /* XLarge */
 
@@ -2500,13 +2285,6 @@ input, select, textarea {
 					#footer header h2 {
 						font-size: 1.25em;
 					}
-
-		/* Copyright */
-
-			#copyright {
-				margin: 0;
-			}
-
 	}
 
 /* Medium */
@@ -2591,11 +2369,6 @@ input, select, textarea {
 			}
 			#skill {
 				padding: 40px 0;
-			}
-		/* Copyright */
-
-			#copyright ul.links {
-				display: block;
 			}
 
 		/* Nav */
@@ -2968,3 +2741,271 @@ input, select, textarea {
 			}
 
 	}
+.image-container {
+          position: relative;
+          height: 200px;
+          overflow: hidden;
+}
+
+.image-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none; /* 기본적으로 숨김 */
+}
+
+.image-slide:first-child {
+  display: block; /* 첫 번째 이미지만 기본 표시 */
+}
+
+/* 화살표 버튼 스타일 */
+.arrow-btn {
+  position: absolute;
+  top: 50%; /* 세로 가운데 정렬 */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정 배경 */
+  color: white;
+  border: none;
+  font-size: 25px; /* 화살표 크기 */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10; /* 이미지 위에 표시되도록 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* 왼쪽 화살표 위치 */
+.prev-btn {
+  padding-right: 5px;
+  padding-left: 0px;
+  padding-bottom: 6px;
+  padding-top: 0px;
+}
+
+        /* 오른쪽 화살표 위치 */
+.next-btn {
+  right: 0px;
+  padding-right: 0px;
+  padding-left: 5px;
+  padding-bottom: 6px;
+  padding-top: 0px;
+}
+
+/* 버튼 호버 효과 */
+.arrow-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* 살짝 회색 */
+    color: rgba(0, 0, 0, 0.7);
+}
+/* 기술 버튼 스타일 */
+.tech-buttons {
+    margin-top: 15px;
+}
+
+/* 각 기술 버튼에 기본 스타일 */
+.tech-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: not-allowed; /* 클릭 불가능 */
+    font-weight: bold;
+    color: white;
+    background-color: gray;
+    font-size: 16px;
+}
+
+/* 각 기술 버튼 색상 */
+.a-btn {
+    background-color: #0074cc; /* Java 색 */
+}
+
+.b-btn {
+    background-color: #FF6600; /* JSP 색 */
+}
+
+.c-btn {
+    background-color: #D34836; /* Apache 색 */
+}
+
+.d-btn {
+    background-color: #00758F; /* MySQL 색 */
+}
+.e-btn{
+    background-color: #8CC84B
+}
+.f-btn{
+    background-color: #FFD43B
+}
+.sh{
+    margin-top: 20px;
+    margin-bottom: 13px;
+}
+.git{
+    margin-top: 10px;
+
+}
+.git img {
+    width: 120px;      /* 너비가 조절되면 높이가 자동으로 비례하도록 설정 */
+    height: 50px;     /* 높이 비례 유지 */
+    display: block;   /* 이미지 주변의 여백을 없애기 위해 display block 설정 */
+    margin: 0 auto;   /* 이미지 중앙 정렬 */
+}
+
+.skillSection {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.skillSection .major h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.skillSection .major p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 50px;
+    color: #666;
+}
+
+.skill-box {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.skill-box .icon {
+    font-size: 40px;
+    color: #ff6600;
+    margin-bottom: 15px;
+}
+
+.skill-box h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.skill-box p {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.aboutMeSection{
+    background-color: #ffffff;
+    padding-bottom: 90px;
+    padding-top: 150px;
+}
+
+        /* 네비게이션 바 */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85); /* 약간 더 어두운 투명도 */
+    color: #fff;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 약간의 그림자 효과 */
+    padding: 20px 40px; /* 위, 아래 간격 및 좌우 여백 추가 */
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.9); /* 더 진한 배경색 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 스크롤 시 그림자 강조 */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 내부 컨텐츠 정렬 */
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* 너비 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+/* 로고 스타일 */
+.navbar-left h1 {
+    font-size: 32px; /* 폰트 크기 확대 */
+    margin: 0;
+    font-weight: 700;
+    font-family: 'Yellowtail-Regular';
+    color: #f39c12; /* 로고 강조 색상 */
+}
+
+/* 메뉴 스타일 */
+.navbar-right {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-right li {
+    margin-left: 30px; /* 메뉴 간 간격 확장 */
+}
+
+.navbar-right a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 28px; /* 메뉴 크기 확대 */
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+    padding: 5px 10px; /* 클릭 영역 확대 */
+}
+
+.navbar-right a:hover {
+    color: #f39c12; /* 강조 색상 */
+}
+
+.navbar-right a::after {
+    content: "";
+    display: block;
+    height: 3px; /* 밑줄 두께 증가 */
+    width: 0;
+    background: #f39c12;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.navbar-right a:hover::after {
+    width: 100%; /* 호버 시 밑줄 애니메이션 */
+}
+
+/* 반응형 처리 */
+@media (max-width: 768px) {
+    .navbar-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar-right {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .navbar-right li:not(:first-child) {
+        display: none; /* Home 이외의 메뉴 숨기기 */
+    }
+    .navbar-left h1 {
+        font-size: 24px; /* 작은 화면에서 로고 크기 줄이기 */
+    }
+}
