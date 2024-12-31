@@ -2064,7 +2064,14 @@ input, select, textarea {
         flex: 1;
         color: #222;
     }
-
+    .text-content h2 {
+        font-size: 50px;
+        font-weight: 800;
+        color: #000000;
+        margin-bottom: 0.5em;
+        font-family: 'YiSunShinDotum';
+        line-height: 1.4;
+    }
     .content-wrapper {
         display: flex;
         max-width: 1200px;
