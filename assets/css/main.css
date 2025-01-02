@@ -2997,6 +2997,9 @@ input, select, textarea {
 .navbar-right a:hover::after {
     width: 100%; /* 호버 시 밑줄 애니메이션 */
 }
+.text-left{
+    text-align: left;
+}
 
 /* 반응형 처리 */
 @media (max-width: 768px) {
